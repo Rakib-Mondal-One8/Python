@@ -8,17 +8,21 @@ class Gadget:
         self.color = color
         self.origin = origin
     def __repr__(self):
-        return f'Gadget {self.brand} {self.price} {self.color} {self.origin}'
+        return (f'Gadget {self.brand} {self.price} {self.color} {self.origin}')
 
     def run(self):
         pass
 
 
 
-class Laptop:
-    def __init__(self, memory,ssd):
+class Laptop(Gadget):
+    def __init__(self,brand,price,color,origin, memory,ssd):
         self.memory = memory
         self.ssd = ssd
+        super().__init__(brand, price, color, origin);
+    def __repr__(self):
+        print(f'RAM {self.memory} GB , SSD {self.ssd} GB')
+        return super().__repr__()
 
     def coding(self):
         return f'learning python and practicing'
@@ -42,5 +46,7 @@ class Camera:
     def change_lens(self):
         pass
 
-my_phone = Phone('iphone',120000,'silver','china',True)
-print(my_phone)
+# my_phone = Phone('iphone',120000,'silver','china',True)
+# print(my_phone)
+l = Laptop("lenovo",50000,"black","china",16,512)
+print(l)

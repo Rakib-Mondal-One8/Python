@@ -1,5 +1,3 @@
-
-
 class Company:
     def __init__(self,name,address):
         self.name = name
@@ -9,6 +7,7 @@ class Company:
         self.counter = []
         self.manager = []
         self.supervisor = []
+        self.fair = []
 
 
 class Driver:
