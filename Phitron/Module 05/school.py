@@ -22,9 +22,6 @@ print(alia)
 print(ranbeer)
 """
 
-
-
-
 class School:
     def __init__(self,name):
         self.name = name
