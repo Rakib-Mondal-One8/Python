@@ -1,3 +1,4 @@
+import ctypes
 """
 class Calculator:
     brand = 'Casio fx991 ex plus'
@@ -29,3 +30,4 @@ class Pen:
 
 pen1 = Pen('Parker','blue',10000)
 pen1.show(pen1)
+
