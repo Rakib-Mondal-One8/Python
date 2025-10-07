@@ -16,7 +16,7 @@ class Shopping:
     def multiply(a,b): # static method don't use self parameter
         return a*b
     @classmethod
-    def hudai_dekhi(self,item):
+    def hudai_dekhi(cls,item):
         print(f'hudai dekhi kintu kinmu na just ac er hau khete esechi')
 
 basu = Shopping('dokan','kolkata')
