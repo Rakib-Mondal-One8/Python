@@ -4,8 +4,10 @@ class Person:
         self.age = age
         self.height = height
         self.weight = weight
+
     def eat(self):
         print("rise,meat,polao")
+
     def exercise(self):
         raise NotImplementedError
 
@@ -13,9 +15,11 @@ class Cricketer(Person):
     def __init__(self, name,age,height,weight,team):
         self.team = team
         super().__init__(name,age,height,weight)
+
     # override
     def eat(self):
         print('vagetables')
+
     def exercise(self):
         print('gym')
 

@@ -6,6 +6,7 @@ class User:
         self.name = name
         self._age = age
         self.__money = money
+
     # getter without any setter is readonly attribute
     @property
     def age(self):
@@ -15,8 +16,9 @@ class User:
     @property
     def salary(self):
         return self.__money
+
     @salary.setter
-    def salary(self,value):
+    def add_salary(self,value):
         if(value<0):return 'salary cannot be negative'
         self.__money += value
 
@@ -26,6 +28,6 @@ samsu = User('kopa',21,12000)
 # print(samsu.age())
 print(samsu.age)
 # print(samsu.salary())
-print(samsu.salary)
-samsu.salary = 3000
-print(samsu.salary)
+print(samsu.salary,1)
+samsu.add_salary = 3000
+print(samsu.salary,2)
