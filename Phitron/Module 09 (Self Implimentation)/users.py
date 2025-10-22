@@ -1,4 +1,5 @@
 from abc import ABC
+from order import *
 
 class User(ABC):
 
@@ -38,7 +39,7 @@ class Customer(User):
 
     def __init__(self, name, email, phone_no):
         super().__init__(name, email, phone_no)
-        self.cart = []
+        self.cart = Order()
 
     def show_menu(self,restaurant):
         restaurant.view_menu()
@@ -46,7 +47,7 @@ class Customer(User):
     def add_to_cart(self,restaurant,item_name,quantity=1):
         order = restaurant.take_order(item_name,quantity)
         if(order):
-            self.cart.append(order)
+            self.cart.add_to_cart(order)
             print('Order Added to Cart!!')
         else:
             print("Sorry Can't Add to Cart")
@@ -55,5 +56,6 @@ class Customer(User):
     def view_cart(self):
         print("*****View Cart*****")
         print(f"Item Name\tPrice\tQuantity")
-        for item in self.cart:
-            print(f"{item[0]}\t\t{item[1]}\t\t{item[2]}")
+        for item in self.cart.items:
+            print(f"{item.name}\t\t{item.price}\t\t{item.quantity}")
+        print(f"Total Price: {self.cart.total_price}")

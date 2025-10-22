@@ -2,7 +2,7 @@ from users import *
 from restaurant import *
 from menu import *
 from food_item import *
-
+from order import *
 restaurant = Restaurant("Rizzs")
 def customer_menu():
     name = input('Enter Name: ')
@@ -39,10 +39,12 @@ def admin_menu():
     admin = Admin(name, email, phone_no)
 
     while (True):
-        print(f"Welcome {name} !!")
+        print(f"Welcome {admin.name} !!")
         print("1. View Menu")
         print("2. Add New Food Item")
-        print("3. Exit")
+        print("3. Add New Employee")
+        print("4. Remove Item")
+        print("5. Exit")
 
         choice = int(input("Enter your choice: "))
         if (choice == 1):
@@ -51,10 +53,25 @@ def admin_menu():
             item_name = input("Enter Item Name: ")
             price = int(input(f"Enter {item_name} Price: "))
             quantity = int(input("Enter Quantity: "))
-            admin.add_food_item(restaurant,item_name,price,quantity)
+            admin.add_menu_item(restaurant,item_name,price,quantity)
 
             print("Congratulations!!! Now Restaurant has a new Item in it's menu card!!")
         elif(choice == 3):
+            print("*****Enter Employee Details*****")
+            name = input("Enter name: ")
+            email = input("Enter email no.: ")
+            phone_no = input("Enter phone_no: ")
+            age = int(input("Enter the Age: "))
+            designation = input("Enter the Designation: ")
+            salary = int(input("Enter the salary: "))
+
+            e = Employee(name,email,phone_no,age,designation,salary)
+            admin.add_employee(restaurant,e)
+
+        elif(choice == 4):
+            item_name = input("Enter Item name: ")
+            admin.remove_item(restaurant,item_name)
+        elif(choice == 5):
             break
         else:
             print("Invalid choice")

@@ -33,7 +33,7 @@ class Menu:
             if(item_name == item.name):
                 if(quantity <= item.quantity):
                     item.quantity -= quantity
-                    return (item.name,item.price,quantity)
+                    return FoodItem(item_name,item.price,quantity)
                 else:
                     print("Quantity Out of Stock!!")
                     return None
