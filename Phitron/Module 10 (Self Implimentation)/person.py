@@ -1,17 +1,26 @@
+from subject import  *
+
 class Person:
     def __init__(self,name):
         self.name = name
 
 
 class Teacher(Person):
-    def __init__(self,name):
+    def __init__(self,name,subject): # object of subject class
         super().__init__(name)
+        self.subject = [subject]
+
+    def add_subject(self,subject):
+        self.subject.append(subject)
+        subject.teachers.append(self)
 
     def teach(self):
         pass
     def evaluate_exam(self):
         pass
 
+    def __repr__(self):
+        return(f'{self.name}')
 
 class Student(Person):
     def __init__(self,name,classroom):
